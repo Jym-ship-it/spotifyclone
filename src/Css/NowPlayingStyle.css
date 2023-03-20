@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.mainContainer {
+    bottom: 0;
+    position: fixed;
+    padding : 16px;
+    width: 98vw;
+}
+.subContiner {
+    display: flex;
+    justify-content: space-between;
+}
+.albumInfo {
+    display: flex;
+    align-items: center;
+}
+#title {
+    color: white;
+    font-family: Montserrat;
+    margin-left: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.songInfoContainer p{
+    color: white;
+    font-family: Montserrat;
+    margin-left: 18px;
+    font-size: 12px;
+}
+.SampleAlbum {
+    width : 55px;
+    height : 55px;
+}
+.favButton {
+    color: white;
+    background-color: transparent;
+    border-style: none;
+    margin-left: 30px;
+}
+.favButton:hover {
+    cursor: pointer;
+}
+.removeButton{
+    color: white;
+    background-color: transparent;
+    border-style: none;
+    margin-left: 18px;
+}
+.removeButton:hover {
+    cursor: pointer;
+}
+.nowplayingControls {
+    display: flex;
+    justify-content: center;
+}
+.nowplayingControls button{
+    color: white;
+    background-color: transparent;
+    border-style: none;
+    margin: 0px 10px;
+}
+.nowplayingControls button:hover{
+    cursor: pointer;
+}
+.nowPlayingRange {
+    background: white;
+    appearance: none;
+    border-radius: 18px;
+    height: 3px;
+    width: 525px;
+}
+.nowPlayingRange:hover{
+    background:#1db954;
+}
+.nowPlayingRange::-webkit-slider-thumb{
+    visibility: hidden;
+}
+.nowPlayingRange:hover::-webkit-slider-thumb{
+    visibility: visible;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 180px;
+}
+.RangePlay {
+    display: flex;
+    align-items: center;
+}
+.RangePlay p {
+    color: white;
+    font-family: Montserrat;
+    margin-left: 18px;
+    font-size: 12px;
+    margin-right: 18px;
+}
+.controls {
+    display: flex;
+    align-items: center;
+}
+.controlsSubContainer {
+    display: flex;
+    align-items: center;
+}
+.controlsSubContainer button{
+    color: white;
+    background-color: transparent;
+    border-style: none;
+    margin-left: 18px;
+}
+.volumeSlider {
+    background: white;
+    appearance: none;
+    border-radius: 18px;
+    height: 3px;
+    margin-bottom: 4.5px;
+}
+.volumeSlider:hover{
+    background:#1db954;
+}
+.volumeSlider::-webkit-slider-thumb{
+    visibility: hidden;
+}
+.volumeSlider:hover::-webkit-slider-thumb{
+    visibility: visible;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 180px;
+}
