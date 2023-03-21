@@ -1,4 +1,5 @@
 import "./App.css";
+import Library from "./components/Library";
 import Nowplaying from "./components/Nowplaying";
 import TopComponent from "./components/TopComponent";
 
@@ -17,7 +18,10 @@ function App() {
           rel="stylesheet"
         />
       </header>
-      <TopComponent />
+      <div className="bodyComponents">
+        <TopComponent/>
+        <Library/>
+      </div>
       <Nowplaying />
     </div>
   );

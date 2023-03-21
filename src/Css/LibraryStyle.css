@@ -1,0 +1,82 @@
+.libraryCon {
+  width: 320px;
+  height: 520px;
+  background-color: #212121;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.libraryCon:hover {
+  overflow-y: scroll;
+}
+.libraryCon::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.libraryCon::-webkit-scrollbar-track {
+  background: #212121;
+}
+
+/* Handle */
+.libraryCon::-webkit-scrollbar-thumb {
+  background: #b3b3b3;
+}
+
+/* Handle on hover */
+.libraryCon::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.titleCon {
+  display: flex;
+  margin-top: 18px;
+  align-items: center;
+}
+.titleCon p {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+.titleCon p:hover {
+  cursor: default;
+}
+.titleCon button {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.musicTools {
+  display: flex;
+  position: static;
+  margin: 0px 18px;
+  gap: 10px;
+  margin-top: 25px;
+}
+.musicTools button {
+  align-items: center;
+  font-size: 12px;
+  font-family: Montserrat;
+  font-weight: 600;
+  background-color:#535353;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 18px;
+}
+.musicTools button:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+.PlaylistCon {
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+}
+.SampleAlbumPlaylist {
+    width : 55px;
+    height : 55px;
+    border-radius: 8px;
+}

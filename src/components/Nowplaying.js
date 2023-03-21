@@ -20,6 +20,7 @@ export default function Nowplaying() {
   const [favIsClicked, setfavIsClicked] = useState("");
   const [remIsClicked, setremIsClicked] = useState("");
   const [playClicked, setplayClicked] = useState("");
+  const [shuffleClicked, setshuffleClicked] = useState("");
   const handleFavClick = () => {
     setfavIsClicked(true);
     if (favIsClicked === true) {
@@ -38,6 +39,12 @@ export default function Nowplaying() {
       setplayClicked(false);
     }
   };
+  const handleShuffle = () => {
+    setshuffleClicked(true);
+    if (shuffleClicked === true) {
+      setshuffleClicked(false);
+    }
+  }
   return (
     <div className="mainContainer">
       <div className="subContiner">
@@ -71,8 +78,8 @@ export default function Nowplaying() {
         <div className="nowplaying">
           <div>
             <div className="nowplayingControls">
-              <button>
-                <ShuffleIcon />
+              <button onClick={handleShuffle}>
+                {shuffleClicked ? <ShuffleIcon style = {{color : "#1db954"}}/> : <ShuffleIcon/>}
               </button>
               <button>
                 <SkipPreviousIcon />
