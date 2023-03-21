@@ -5,19 +5,21 @@ import { FavoriteBorderOutlined } from "@mui/icons-material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
-import ShuffleIcon from '@mui/icons-material/Shuffle';
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
-import SkipNextIcon from '@mui/icons-material/SkipNext';
-import RepeatIcon from '@mui/icons-material/Repeat';
-import AodIcon from '@mui/icons-material/Aod';
-import QueueMusicIcon from '@mui/icons-material/QueueMusic';
-import SpeakerGroupIcon from '@mui/icons-material/SpeakerGroup';
-import VolumeMuteIcon from '@mui/icons-material/VolumeMute';
+import ShuffleIcon from "@mui/icons-material/Shuffle";
+import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
+import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
+import SkipNextIcon from "@mui/icons-material/SkipNext";
+import RepeatIcon from "@mui/icons-material/Repeat";
+import AodIcon from "@mui/icons-material/Aod";
+import QueueMusicIcon from "@mui/icons-material/QueueMusic";
+import SpeakerGroupIcon from "@mui/icons-material/SpeakerGroup";
+import VolumeMuteIcon from "@mui/icons-material/VolumeMute";
+import PauseCircleIcon from "@mui/icons-material/PauseCircle";
 
 export default function Nowplaying() {
   const [favIsClicked, setfavIsClicked] = useState("");
   const [remIsClicked, setremIsClicked] = useState("");
+  const [playClicked, setplayClicked] = useState("");
   const handleFavClick = () => {
     setfavIsClicked(true);
     if (favIsClicked === true) {
@@ -28,6 +30,12 @@ export default function Nowplaying() {
     setremIsClicked(true);
     if (remIsClicked === true) {
       setremIsClicked(false);
+    }
+  };
+  const handlePlayClicked = () => {
+    setplayClicked(true);
+    if (playClicked === true) {
+      setplayClicked(false);
     }
   };
   return (
@@ -63,26 +71,60 @@ export default function Nowplaying() {
         <div className="nowplaying">
           <div>
             <div className="nowplayingControls">
-              <button><ShuffleIcon/></button>
-              <button><SkipPreviousIcon/></button>
-              <button><PlayCircleFilledWhiteIcon style={{fontSize : "45px"}}/></button>
-              <button><SkipNextIcon/></button>
-              <button><RepeatIcon/></button>
+              <button>
+                <ShuffleIcon />
+              </button>
+              <button>
+                <SkipPreviousIcon />
+              </button>
+              <button onClick={handlePlayClicked}>
+                {playClicked ? (
+                  <PauseCircleIcon style={{ fontSize: "45px" }} />
+                ) : (
+                  <PlayCircleFilledWhiteIcon style={{ fontSize: "45px" }} />
+                )}
+              </button>
+              <button>
+                <SkipNextIcon />
+              </button>
+              <button>
+                <RepeatIcon />
+              </button>
             </div>
             <div className="RangePlay">
               <p>00:00</p>
-              <input type="range" min="1" max="100" id="myRange" className="nowPlayingRange"></input>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                id="myRange"
+                className="nowPlayingRange"
+              ></input>
               <p>00:00</p>
             </div>
           </div>
         </div>
         <div className="controls">
           <div className="controlsSubContainer">
-            <button><AodIcon/></button>
-            <button><QueueMusicIcon/></button>
-            <button><SpeakerGroupIcon/></button>
-            <button><VolumeMuteIcon/></button>
-            <input type="range" min="1" max="100" id="myRange" className="volumeSlider"></input>
+            <button>
+              <AodIcon />
+            </button>
+            <button>
+              <QueueMusicIcon />
+            </button>
+            <button>
+              <SpeakerGroupIcon />
+            </button>
+            <button>
+              <VolumeMuteIcon />
+            </button>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              id="myRange"
+              className="volumeSlider"
+            ></input>
           </div>
         </div>
       </div>
