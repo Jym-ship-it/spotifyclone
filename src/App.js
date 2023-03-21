@@ -1,5 +1,7 @@
 import "./App.css";
+import CurrentPlaying from "./components/CurrentPlaying";
 import Library from "./components/Library";
+import MusicHome from "./components/MusicHome";
 import Nowplaying from "./components/Nowplaying";
 import TopComponent from "./components/TopComponent";
 
@@ -19,8 +21,16 @@ function App() {
         />
       </header>
       <div className="bodyComponents">
-        <TopComponent/>
-        <Library/>
+        <div>
+          <TopComponent />
+          <Library />
+        </div>
+        <div>
+          <MusicHome/>
+        </div>
+        <div>
+          <CurrentPlaying/>
+        </div>
       </div>
       <Nowplaying />
     </div>
