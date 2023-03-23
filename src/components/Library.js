@@ -10,7 +10,7 @@ export default function Library() {
         <div className="titleCon">
           <button>
             <LibraryBooksIcon
-              style={{ fontSize: "28px", marginRight: "20px" }}
+              style={{ fontSize: "28px", marginRight: "20px" , marginLeft : "15px", }}
             />
           </button>
           <p>Your Library</p>

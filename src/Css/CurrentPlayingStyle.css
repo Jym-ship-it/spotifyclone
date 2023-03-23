@@ -4,3 +4,48 @@
     background-color: #212121;
     border-radius: 8px;
 }
+.CurrentPlayingSubCon{
+    padding: 25px;
+}
+.CurrentPlayingSubCon p{
+    color: white;
+    font-size: 14px;
+    font-family: Montserrat;
+    font-weight: 600;
+}
+.musicInfo p {
+    color: white;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.sampleImg { 
+    width: 272px;
+    border-radius: 8px ;
+    margin-top: 20px;
+}
+.lyricsCon {
+    width: 252px;
+    height: 100px;
+    background-color:#b3b3b3;
+    border-radius: 8px;
+    flex-direction: column;
+    margin-top: 20px;
+    padding : 10px 10px;
+    display: flex;
+}
+.lyricsCon p{
+    text-align: left;
+}
+.lyricsCon button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 10px 50px;
+    border-radius: 18px;
+}
