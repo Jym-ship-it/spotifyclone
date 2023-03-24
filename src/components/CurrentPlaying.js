@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Css/CurrentPlayingStyle.css'
-import SampleAlbum from '../assets/images/sampleAlbum.jpg'
+import SampleAlbum from '../assets/images/image.png'
 
 export default function CurrentPlaying() {
   return (
@@ -10,7 +10,7 @@ export default function CurrentPlaying() {
         <div className='musicInfo'>
           <img src={SampleAlbum} className = "sampleImg"></img>
           <p>No Longer Bound</p>
-          <p>Forrest</p>
+          <p id = 'Artist'>Forrest</p>
         </div>
         <div className='lyricsCon'>
           <p>Lyrics</p>

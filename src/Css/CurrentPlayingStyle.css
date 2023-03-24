@@ -20,6 +20,13 @@
     font-weight: 600;
     margin-top: 20px;
 }
+#Artist {
+    color: white;
+    font-size: 14px;
+    font-family: Montserrat;
+    font-weight: 600;
+    margin-top: 10px;
+}
 .sampleImg { 
     width: 272px;
     border-radius: 8px ;
@@ -27,7 +34,7 @@
 }
 .lyricsCon {
     width: 252px;
-    height: 100px;
+    height: 80px;
     background-color:#b3b3b3;
     border-radius: 8px;
     flex-direction: column;
@@ -37,15 +44,19 @@
 }
 .lyricsCon p{
     text-align: left;
+    margin-top: 8px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
 }
 .lyricsCon button {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 15px;
     color: white;
     background-color: transparent;
     border: 1px solid white;
-    padding: 10px 50px;
+    padding: 8px 50px;
     border-radius: 18px;
 }

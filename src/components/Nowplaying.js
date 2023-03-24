@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SampleAlbum from "../assets/images/sampleAlbum.jpg";
+import SampleAlbum from "../assets/images/image.png";
 import "../Css/NowPlayingStyle.css";
 import { FavoriteBorderOutlined } from "@mui/icons-material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -15,12 +15,14 @@ import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import SpeakerGroupIcon from "@mui/icons-material/SpeakerGroup";
 import VolumeMuteIcon from "@mui/icons-material/VolumeMute";
 import PauseCircleIcon from "@mui/icons-material/PauseCircle";
+import SampleAudio from '../assets/Audio/boombap.mp3'
 
 export default function Nowplaying() {
   const [favIsClicked, setfavIsClicked] = useState("");
   const [remIsClicked, setremIsClicked] = useState("");
-  const [playClicked, setplayClicked] = useState("");
+  const [playClicked, setplayClicked] = useState(false);
   const [shuffleClicked, setshuffleClicked] = useState("");
+  const [audio] = useState( new Audio(SampleAudio) )
   const handleFavClick = () => {
     setfavIsClicked(true);
     if (favIsClicked === true) {
@@ -33,10 +35,19 @@ export default function Nowplaying() {
       setremIsClicked(false);
     }
   };
+  const handlePrevious = () => {
+
+    audio.currentTime = 0;
+  }
   const handlePlayClicked = () => {
-    setplayClicked(true);
+    if (playClicked === false)
+    {
+      setplayClicked(true);
+      audio.play()
+    }
     if (playClicked === true) {
       setplayClicked(false);
+      audio.pause()
     }
   };
   const handleShuffle = () => {
@@ -55,8 +66,8 @@ export default function Nowplaying() {
             className="SampleAlbum"
           ></img>
           <div className="songInfoContainer">
-            <p id="title">No Longer Bound</p>
-            <p>Forrest</p>
+            <p id="title">90s Boom Bap Type Beat</p>
+            <p>Old School Joey Bada$$ x J Dilla </p>
           </div>
           <div className="albumIcons">
             <button className="favButton" onClick={handleFavClick}>
@@ -81,7 +92,7 @@ export default function Nowplaying() {
               <button onClick={handleShuffle}>
                 {shuffleClicked ? <ShuffleIcon style = {{color : "#1db954"}}/> : <ShuffleIcon/>}
               </button>
-              <button>
+              <button onClick={handlePrevious}>
                 <SkipPreviousIcon />
               </button>
               <button onClick={handlePlayClicked}>
