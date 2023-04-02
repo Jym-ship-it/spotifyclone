@@ -67,15 +67,9 @@
     color: white;
 }
 .nowPlayingRange {
-    appearance: none;
-    background-color: white;
     border-radius: 18px;
     height: 3px;
     width: 525px;
-}
-.nowPlayingRange:hover{
-    background-color: #1db954;
-    cursor: pointer;
 }
 .nowPlayingRange::-webkit-slider-thumb{
     visibility: hidden;
@@ -114,14 +108,9 @@
     margin-left: 18px;
 }
 .volumeSlider {
-    background: white;
-    appearance: none;
     border-radius: 18px;
     height: 3px;
     margin-bottom: 4.5px;
-}
-.volumeSlider:hover{
-    background:#1db954;
 }
 .volumeSlider::-webkit-slider-thumb{
     visibility: hidden;

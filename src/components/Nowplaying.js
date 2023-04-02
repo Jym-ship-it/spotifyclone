@@ -15,14 +15,17 @@ import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import SpeakerGroupIcon from "@mui/icons-material/SpeakerGroup";
 import VolumeMuteIcon from "@mui/icons-material/VolumeMute";
 import PauseCircleIcon from "@mui/icons-material/PauseCircle";
-import SampleAudio from '../assets/Audio/boombap.mp3'
+import SampleAudio from "../assets/Audio/boombap.mp3";
 
 export default function Nowplaying() {
   const [favIsClicked, setfavIsClicked] = useState("");
   const [remIsClicked, setremIsClicked] = useState("");
   const [playClicked, setplayClicked] = useState(false);
   const [shuffleClicked, setshuffleClicked] = useState("");
-  const [audio] = useState( new Audio(SampleAudio) )
+  const [audio] = useState(new Audio(SampleAudio));
+  let Duration = 0;
+  const [timeProgress, setTimeProgress] = useState(0);
+  const [duration, setDuration] = useState(0);
   const handleFavClick = () => {
     setfavIsClicked(true);
     if (favIsClicked === true) {
@@ -36,18 +39,16 @@ export default function Nowplaying() {
     }
   };
   const handlePrevious = () => {
-
     audio.currentTime = 0;
-  }
+  };
   const handlePlayClicked = () => {
-    if (playClicked === false)
-    {
+    if (playClicked === false) {
       setplayClicked(true);
-      audio.play()
+      audio.play();
     }
     if (playClicked === true) {
       setplayClicked(false);
-      audio.pause()
+      audio.pause();
     }
   };
   const handleShuffle = () => {
@@ -55,7 +56,16 @@ export default function Nowplaying() {
     if (shuffleClicked === true) {
       setshuffleClicked(false);
     }
+  };
+  const handleVolume = (e) => {
+  audio.volume = e.target.value/100
+  };
+  
+  const handleProgressChange = () => {
+    Duration = audio.currentTime;
+    console.log(Duration);
   }
+  
   return (
     <div className="mainContainer">
       <div className="subContiner">
@@ -90,7 +100,11 @@ export default function Nowplaying() {
           <div>
             <div className="nowplayingControls">
               <button onClick={handleShuffle}>
-                {shuffleClicked ? <ShuffleIcon style = {{color : "#1db954"}}/> : <ShuffleIcon/>}
+                {shuffleClicked ? (
+                  <ShuffleIcon style={{ color: "#1db954" }} />
+                ) : (
+                  <ShuffleIcon />
+                )}
               </button>
               <button onClick={handlePrevious}>
                 <SkipPreviousIcon />
@@ -110,15 +124,16 @@ export default function Nowplaying() {
               </button>
             </div>
             <div className="RangePlay">
-              <p>00:00</p>
+              <p>{timeProgress}</p>
               <input
                 type="range"
-                min="1"
-                max="100"
+                min="0"
+                value={Duration}
                 id="myRange"
                 className="nowPlayingRange"
+                onChange={handleProgressChange}
               ></input>
-              <p>00:00</p>
+              <p>{duration}</p>
             </div>
           </div>
         </div>
@@ -138,10 +153,12 @@ export default function Nowplaying() {
             </button>
             <input
               type="range"
-              min="1"
+              min="0"
+              defaultValue={100}
               max="100"
               id="myRange"
               className="volumeSlider"
+              onChange={handleVolume}
             ></input>
           </div>
         </div>
